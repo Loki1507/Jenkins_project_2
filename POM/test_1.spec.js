@@ -1,3 +1,11 @@
+import { test, expect } from '@playwright/test';
+import { Homepage } from '../POM/pages/HomePage';
+import { ElectronicsPage } from '../POM/pages/ElectronicsPage';
+import {Wishlist } from '../POM/pages/Wishlist_scenarios' ;
+
+
+
+
 test('adding item to the cart from the whishlist', async ({ page }) => {
     //required classes & objects
     const homepage = new Homepage(page);
