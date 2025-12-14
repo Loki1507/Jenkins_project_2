@@ -19,7 +19,7 @@ test('adding item to the cart from the whishlist', async ({ page }) => {
     await homepage.clickOnLogIN();
     await homepage.loginWithValidCredentials('testking902@gmail.com', 'testking902');
     const no_ofItemsInWishlist = await page.locator('.ico-wishlist .wishlist-qty').textContent();
-
+        console.log('half code execution is done')
     //checking if the wishlist is empty then we add iteam if not we proceed to wishlist directly
     if (no_ofItemsInWishlist === '(0)') {
         //home page - clicking on category
@@ -31,6 +31,7 @@ test('adding item to the cart from the whishlist', async ({ page }) => {
         const item = subcatogiries[1];
         //clicking on sub category
         await electronicsPage.clickOnSubCatogiry(item);
+        console.log('40% code execution is done')
         //capture all the products names
         const allprodutsList = await electronicsPage.captureAllProducts();
         await page.waitForLoadState();
@@ -46,7 +47,7 @@ test('adding item to the cart from the whishlist', async ({ page }) => {
                 break
             }
         }
-
+        console.log('80% code execution is done')
         await page.waitForLoadState();
         //adding item to the cart
         await electronicsPage.clickOnAddToWishlist();
@@ -67,6 +68,7 @@ test('adding item to the cart from the whishlist', async ({ page }) => {
     await table.locator('(//td[@class="add-to-cart"]//input)[1]').check();
     await page.getByRole('button', { name: /Add to cart/i }).click();
     await expect( page.locator('//div[@class="page shopping-cart-page"]//h1')).toBeVisible();
-    await page.pause();
+    console.log('100% code execution is done')
+    
     
 })
